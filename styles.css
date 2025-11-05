@@ -1,0 +1,687 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brand-color: #0A192F;
+    --text-color: #36454F;
+    --white: #FFFFFF;
+    --text-light: rgba(255, 255, 255, 0.8);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--white);
+    background-color: var(--brand-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--brand-color);
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 0;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 0;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.hero-cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background-color: var(--white);
+    color: var(--brand-color);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.store-badge-icon {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.cta-btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.cta-btn-label {
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.cta-btn-platform {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Section Styles */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.section-description {
+    font-size: 18px;
+    color: var(--text-light);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    line-height: 1.8;
+}
+
+/* About Section */
+.about {
+    background-color: var(--brand-color);
+}
+
+.about-content {
+    text-align: center;
+}
+
+/* Features Section */
+.features {
+    background-color: var(--brand-color);
+}
+
+.timeline {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--white), rgba(255, 255, 255, 0.3));
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--white);
+    border-radius: 50%;
+    border: 3px solid var(--brand-color);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px 24px;
+    border-radius: 8px;
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    background: rgba(255, 255, 255, 0.04);
+    border-left-color: var(--white);
+    transform: translateX(5px);
+}
+
+.timeline-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.timeline-text {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* How It Works Section - Detailed */
+.how-it-works-detailed {
+    background-color: var(--brand-color);
+}
+
+.app-works-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.app-works-item {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.app-works-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.app-works-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.app-works-description {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Waitlist Section */
+.waitlist {
+    background-color: var(--brand-color);
+    padding: 100px 0;
+}
+
+.waitlist-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.waitlist-form {
+    margin-top: 50px;
+    text-align: left;
+    padding: 40px;
+    border: 2px solid #FFD600;
+    border-radius: 12px;
+    background: rgba(255, 214, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--white);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 8px;
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+.btn-loading {
+    display: none;
+}
+
+.form-message {
+    margin-top: 20px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    text-align: center;
+    display: none;
+}
+
+.form-message.success {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: block;
+}
+
+.form-message.error {
+    background-color: rgba(220, 38, 38, 0.2);
+    color: var(--white);
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--brand-color);
+    color: var(--white);
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.footer-icon:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(10, 25, 47, 0.9);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(10, 25, 47, 0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: var(--text-color);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background-color: rgba(10, 25, 47, 0.1);
+    color: var(--brand-color);
+}
+
+.modal-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--brand-color);
+    margin-bottom: 16px;
+}
+
+.modal-text {
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--brand-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #0d2340;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(10, 25, 47, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+
+    .hero-content {
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    .hero-cta-buttons {
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 280px;
+        min-width: auto;
+    }
+
+    .hero-car-image {
+        max-width: 100%;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .section-description {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+
+    .timeline {
+        max-width: 100%;
+        padding: 30px 0;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+        margin-bottom: 30px;
+    }
+
+    .timeline-dot {
+        left: 8px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .timeline-content {
+        padding: 16px 20px;
+    }
+
+    .timeline-title {
+        font-size: 18px;
+    }
+
+    .timeline-text {
+        font-size: 14px;
+    }
+
+    .steps-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .step-item {
+        max-width: 100%;
+    }
+
+    .app-works-item {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+
+    .app-works-title {
+        font-size: 18px;
+    }
+
+    .app-works-description {
+        font-size: 14px;
+    }
+
+    .waitlist {
+        padding: 60px 0;
+    }
+
+    .waitlist-form {
+        margin-top: 40px;
+        padding: 30px 24px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .feature-item {
+        padding: 24px 16px;
+    }
+
+    .feature-title {
+        font-size: 20px;
+    }
+
+    .app-works-item {
+        margin-bottom: 35px;
+        padding-bottom: 35px;
+    }
+
+    .app-works-title {
+        font-size: 17px;
+    }
+
+    .app-works-description {
+        font-size: 14px;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+
+    .btn-submit {
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
