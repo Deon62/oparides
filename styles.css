@@ -61,6 +61,19 @@ body {
     gap: 30px;
 }
 
+.beta-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: #FFD600;
+    color: var(--brand-color);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: -10px;
+}
+
 .hero-title {
     font-size: 48px;
     font-weight: 700;
@@ -384,6 +397,86 @@ section {
     display: block;
 }
 
+/* FAQ Section */
+.faq {
+    background-color: var(--brand-color);
+    padding: 100px 0;
+}
+
+.faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    opacity: 0.8;
+}
+
+.faq-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0;
+    text-align: left;
+    flex: 1;
+}
+
+.faq-icon {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--white);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 20px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 0 0 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 0 24px 0;
+}
+
+.faq-answer p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
 /* Footer */
 .footer {
     background-color: var(--brand-color);
@@ -566,6 +659,18 @@ section {
         margin-bottom: 50px;
     }
 
+    .faq {
+        padding: 60px 0;
+    }
+
+    .faq-title {
+        font-size: 16px;
+    }
+
+    .faq-answer p {
+        font-size: 14px;
+    }
+
     .timeline {
         max-width: 100%;
         padding: 30px 0;
@@ -666,6 +771,19 @@ section {
     }
 
     .app-works-description {
+        font-size: 14px;
+    }
+
+    .beta-badge {
+        font-size: 11px;
+        padding: 5px 14px;
+    }
+
+    .faq-title {
+        font-size: 15px;
+    }
+
+    .faq-answer p {
         font-size: 14px;
     }
 
