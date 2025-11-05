@@ -96,10 +96,33 @@ a:active {
 .hero-title {
     font-size: 48px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.3;
     color: var(--white);
     margin-bottom: 0;
     letter-spacing: -1px;
+}
+
+.title-accent {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD600 0%, #FFA500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.title-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD600, transparent);
+    border-radius: 2px;
+    opacity: 0.6;
 }
 
 .hero-slogan {
@@ -821,6 +844,11 @@ section {
         font-size: 36px;
     }
 
+    .title-accent {
+        font-size: 1em;
+        letter-spacing: 0.5px;
+    }
+
     .hero-slogan {
         font-size: 14px;
         margin: 6px 0 12px 0;
@@ -974,6 +1002,16 @@ section {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 32px;
+    }
+
+    .title-accent {
+        font-size: 1em;
+        letter-spacing: 0.5px;
+    }
+
+    .title-accent::after {
+        height: 2px;
+        bottom: -3px;
     }
 
     .hero-slogan {
