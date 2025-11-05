@@ -322,6 +322,60 @@ section {
     margin: 0 auto;
 }
 
+/* Payment Options */
+.payment-options {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.payment-options-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 30px;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.payment-icon-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.payment-icon-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.payment-icon {
+    width: auto;
+    height: 40px;
+    max-width: 120px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.payment-icon-item:hover .payment-icon {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
 /* Waitlist Section */
 .waitlist {
     background-color: var(--brand-color);
@@ -777,6 +831,24 @@ section {
         font-size: 14px;
     }
 
+    .payment-options {
+        margin-top: 40px;
+    }
+
+    .payment-options-title {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    .payment-icons {
+        gap: 16px;
+    }
+
+    .payment-icon {
+        height: 35px;
+        max-width: 100px;
+    }
+
     .waitlist {
         padding: 60px 0;
     }
@@ -824,6 +896,28 @@ section {
 
     .app-works-description {
         font-size: 14px;
+    }
+
+    .payment-options {
+        margin-top: 35px;
+    }
+
+    .payment-options-title {
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+
+    .payment-icons {
+        gap: 12px;
+    }
+
+    .payment-icon-item {
+        padding: 10px;
+    }
+
+    .payment-icon {
+        height: 30px;
+        max-width: 80px;
     }
 
     .beta-badge {
